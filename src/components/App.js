@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./css/drum-machine.css";
+import "./css/App.css";
 
+//This is the outer Drum machine app containting all other components
 class App extends Component {
 	render() {
 		return (
