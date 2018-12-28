@@ -1,3 +1,5 @@
-#drum-machine {
-	background-color: black;
+.drum-machine-panel {
+	margin: 10%;
+	height: 500px;
+	background: skyblue;
 }
