@@ -1,21 +1,26 @@
 import React from "react";
-import "../css/DrumPad.css";
 
 class DrumPad extends React.Component {
-	audioKey = this.props.button;
-
-	handleClick = event => {
-		const audio = event.currentTarget.children[0];
+	constructor(props) {
+		super(props);
+		this.state = {
+			audioKey: this.props.button
+		};
+		this.handleClick = this.handleClick.bind(this);
+		this.playAudio = this.playAudio.bind(this);
+	}
+	handleClick(event) {
+		const button = event.currentTarget;
+		this.playAudio(button.children[0], button.id);
+	}
+	playAudio(audio, key) {
+		if (key) this.props.setDisplay(key);
 		audio.play();
-	};
-
-	playAudio = button => {
-		button.click();
-	};
+	}
 
 	componentDidUpdate() {
-		if (this.props.keyPressed === this.audioKey) {
-			this.playAudio(this.refs.buttonRef);
+		if (this.props.keyPressed === this.state.audioKey) {
+			this.playAudio(this.refs.buttonRef.children[0]);
 		}
 	}
 

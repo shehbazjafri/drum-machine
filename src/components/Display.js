@@ -4,9 +4,7 @@ class Display extends React.Component {
 	render() {
 		return (
 			<div id="display" className="display">
-				{this.props.keyPressed !== "" &&
-					`You pressed 
-				${this.props.keyPressed} key`}
+				{this.props.display !== "" && this.props.display}
 			</div>
 		);
 	}
