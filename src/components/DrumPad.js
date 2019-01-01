@@ -25,8 +25,8 @@ class DrumPad extends React.Component {
 	}
 
 	render() {
-		const mp3_file = require("../audio/" + this.props.button + ".mp3");
-
+		// const mp3_file = require("../audio/" + this.props.button + ".mp3");
+		const mp3_file = this.props.sound;
 		return (
 			<button
 				className="drum-pad"
